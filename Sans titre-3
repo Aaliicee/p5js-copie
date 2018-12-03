@@ -1,0 +1,45 @@
+var sound1;
+var sound2;
+var sound3;
+var sound4;
+var sound5;
+var sound3Amp;
+var sound4FFT;
+var sound5FFT;
+
+function preload() {
+    sound1 = loadSound("../assets/07054042.wav");
+    sound2 = loadSound("../assets/07074105.wav");
+    sound3 = loadSound("../assets/07076041.wav");
+    sound4 = loadSound("../assets/07076041.wav");
+    sound5 = loadSound("../assets/07027158.wav"); /* exercice du 18/10*/
+}
+
+function setup() {
+    // put setup code here
+    createCanvas(windowWidth, windowHeight);
+    background(0);
+    //sound1.loop();
+
+    sound3Amp = new p5.Amplitude();
+    sound3Amp.setInput(sound3);
+
+    sound4FFT = new p5.FFT(0.8, 16)
+    sound4FFT.setInput(sound4)
+
+    sound5FFT = new p5.FFT(0.8, 1024)
+    sound5FFT.setInput(sound5)
+}
+
+function draw() {
+    createCanvas(windowWidth, windowHeight);
+
+    background(0);
+
+    /*
+    ellipse(width / 2, height / 2, 50, 50);
+    if (keyIsDown(65) == true) { //si c'est vrai cela va jouer 
+         if(sound1.isplaying() == false) {
+        sound1.play();
+    }
+    */
